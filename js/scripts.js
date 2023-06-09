@@ -1,8 +1,14 @@
+//Business Logic
 
-
-function InitializeUILogic() {
-    const countToInput = document.getElementsById("count");
-
+//UI Logic
+function handleGenerateBeepBoop(countToInput) {
+    console.log(countToInput.value);
 }
 
-window.addEventListener("load", InitializeUILogic());
+function InitializeUILogic() {
+    const countToInput = document.getElementById("count");
+    const generateButton = document.getElementById("generate");
+    generateButton.addEventListener("click", (event) => handleGenerateBeepBoop(countToInput));
+}
+
+window.addEventListener("load", InitializeUILogic);
