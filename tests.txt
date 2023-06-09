@@ -1,34 +1,112 @@
+Describe: getBeepBoopCountingArray()
+
+Test: "It should return an array with length equal to 1 plus the users input"
+Code: getBeepBoopCountingArray(5).length;
+Expected Output: 6
+
+Test: "It should count from 0 to the input number, replacing numbers with translateBeepBoop"
+Code: getBeepBoopCountingArray(5);
+Expected Output: [0, "Beep!", "Boop!", "Won't you be my neighbor?", 4, 5]
+
+Test: "It should count from 0 to the input number, replacing numbers with translateBeepBoop"
+Code: getBeepBoopCountingArray(14);
+Expected Output: [0, "Beep", "Boop!", "Won't you be my neighbor?", 4, 5, 6, 7, 8, 9, "Beep!", "Beep!", "Boop!", "Won't you be my neighbor?", "Beep!"]
 
 
+Descibe: translateBeepBoop()
 
-EXAMPLE TEST BELOW:
-Describe: beepBoop()
+Test: "For numbers that contain a 1, all digits are replaced with "Beep!"
+Code: translateBeepBoop(1);
+Expected Output: "Beep!"
 
-Test: "It should return an array of numbers from 0 to the user's inputted number"
-Code: beepBoop(5);
-Expected Output: [0, 1, 2, 3, 4, 5]
+Test: "For numbers that contain a 1, all digits are replaced with "Beep!"
+Code: translateBeepBoop(11);
+Expected Output: "Beep!"
 
-Test: "It should..." // this is the start of 2nd test for beepBoop()
+Test: "For numbers that contain a 1, all digits are replaced with "Beep!"
+Code: translateBeepBoop(109);
+Expected Output: "Beep!"
 
+Test: For numbers that contain a 2, all digits are replaced with "Boop!"
+Code: translateBeepBoop(2);
+Expected Output: "Boop!"
 
-Describe is a common term in testing. It's used to organize tests. For example, we might 
-make a little application with three different functions, all of which need several tests. 
-Here, we'll use one describe statement for each function, and group all of the tests for 
-that function below the describe statement. In our example, we're describing the 
-wordCounter() function.
+Test: For numbers that contain a 2, all digits are replaced with "Boop!"
+Code: translateBeepBoop(24);
+Expected Output: "Boop!"
 
-Test breaks down what the test is doing in plain English. In the example above, we see 
-that the test 'It should return 1 if a passage has just one word' is actually not code for
- the machine. Instead, it communicates to other developers (and ourselves) what the test 
- is supposed to do.
+Test: For numbers that contain a 2, all digits are replaced with "Boop!"
+Code: translateBeepBoop(2099);
+Expected Output: "Boop!"
 
-Code is where we'll put any code we need to run in order to check that our test is working. 
-We don't actually need to have a separate variable called text. We could also just pass 
-"hello" directly into the function. We split it out here just to show that you can add 
-multiple lines of code if needed. Also, we don't actually define the wordCounter() function 
-here. That code goes in our actual scripts. Instead we just call on the code we want to 
-test in the "code" section of our pseudocode test.
+Test: For numbers that contain a 3, all digits are replaced with "Won't you be my neighbor?"
+Code: translateBeepBoop(3);
+Expected Output: "Won't you be my neighbor?"
 
-Expected Output is what we expect our test result to be. This usually means seeing if a 
-function we've written returns what we expect. In this case, we expect the output of 
-wordCounter(text); to equal 1.
+Test: For numbers that contain a 3, all digits are replaced with "Won't you be my neighbor?"
+Code: translateBeepBoop(39);
+Expected Output: "Won't you be my neighbor?"
+
+Test: For numbers that contain a 3, all digits are replaced with "Won't you be my neighbor?"
+Code: translateBeepBoop(8763);
+Expected Output: "Won't you be my neighbor?"
+
+Test: Higher digit substitutions take precedent over lower digit substitions
+Code: translateBeepBoop(12);
+Expected Output: "Boop!"
+
+Test: Higher digit substitutions take precedent over lower digit substitions
+Code: translateBeepBoop(13);
+Expected Output: "Won't you be my neighbor?"
+
+Test: Higher digit substitutions take precedent over lower digit substitions
+Code: translateBeepBoop(123);
+Expected Output: "Won't you be my neighbor?"
+
+Test: Higher digit substitutions take precedent over lower digit substitions
+Code: translateBeepBoop(213);
+Expected Output: "Won't you be my neighbor?"
+
+Test: Higher digit substitutions take precedent over lower digit substitions
+Code: translateBeepBoop(321);
+Expected Output: "Won't you be my neighbor?"
+
+Test: Higher digit substitutions take precedent over lower digit substitions
+Code: translateBeepBoop(1311);
+Expected Output: "Won't you be my neighbor?"
+
+Test: Higher digit substitutions take precedent over lower digit substitions
+Code: translateBeepBoop(1211);
+Expected Output: "Boop!"
+
+Test: Higher digit substitutions take precedent over lower digit substitions
+Code: translateBeepBoop(1112);
+Expected Output: "Boop!"
+
+Test: Higher digit substitutions take precedent over lower digit substitions
+Code: translateBeepBoop(211);
+Expected Output: "Boop!"
+
+Test: For numbers not containing a critical digit, return the original number
+Code: translateBeepBoop(0);
+Expected Output: 0
+
+Test: For numbers not containing a critical digit, return the original number
+Code: translateBeepBoop(4);
+Expected Output: 4
+
+Test: For numbers not containing a critical digit, return the original number
+Code: translateBeepBoop(5);
+Expected Output: 5
+
+Test: For numbers not containing a critical digit, return the original number
+Code: translateBeepBoop(6);
+Expected Output: 6
+
+Test: For numbers not containing a critical digit, return the original number
+Code: translateBeepBoop(7890);
+Expected Output: 7890
+
+Test: For numbers not containing a critical digit, return the original number
+Code: translateBeepBoop(4567890);
+Expected Output: 4567890
