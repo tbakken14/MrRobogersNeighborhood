@@ -1,3 +1,10 @@
 body {
     background: linear-gradient(to right, rgb(103, 223, 103), rgb(67, 136, 211));
+    text-align: center;
+    font-size: 2em;
+    margin: 5vh;
+}
+
+input {
+    font-size: 1em;
 }
