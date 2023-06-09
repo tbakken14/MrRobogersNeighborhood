@@ -1,7 +1,8 @@
 
 
 function InitializeUILogic() {
-    console.log("Hello World");
+    const countToInput = document.getElementsById("count");
+
 }
 
 window.addEventListener("load", InitializeUILogic());
