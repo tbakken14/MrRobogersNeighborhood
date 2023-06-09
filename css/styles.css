@@ -8,3 +8,16 @@ body {
 input {
     font-size: 1em;
 }
+
+button {
+    font-size: 1em;
+    margin: 3vh;
+    padding: 1vh;
+    border: 2px solid black;
+    cursor: pointer;
+    border-radius: .5em;
+}
+
+button:active {
+    background-color: rgb(184, 184, 184);
+}
