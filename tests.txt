@@ -1,0 +1,34 @@
+
+
+
+EXAMPLE TEST BELOW:
+Describe: beepBoop()
+
+Test: "It should return an array of numbers from 0 to the user's inputted number"
+Code: beepBoop(5);
+Expected Output: [0, 1, 2, 3, 4, 5]
+
+Test: "It should..." // this is the start of 2nd test for beepBoop()
+
+
+Describe is a common term in testing. It's used to organize tests. For example, we might 
+make a little application with three different functions, all of which need several tests. 
+Here, we'll use one describe statement for each function, and group all of the tests for 
+that function below the describe statement. In our example, we're describing the 
+wordCounter() function.
+
+Test breaks down what the test is doing in plain English. In the example above, we see 
+that the test 'It should return 1 if a passage has just one word' is actually not code for
+ the machine. Instead, it communicates to other developers (and ourselves) what the test 
+ is supposed to do.
+
+Code is where we'll put any code we need to run in order to check that our test is working. 
+We don't actually need to have a separate variable called text. We could also just pass 
+"hello" directly into the function. We split it out here just to show that you can add 
+multiple lines of code if needed. Also, we don't actually define the wordCounter() function 
+here. That code goes in our actual scripts. Instead we just call on the code we want to 
+test in the "code" section of our pseudocode test.
+
+Expected Output is what we expect our test result to be. This usually means seeing if a 
+function we've written returns what we expect. In this case, we expect the output of 
+wordCounter(text); to equal 1.
