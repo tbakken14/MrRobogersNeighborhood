@@ -1,34 +1,29 @@
-# _{Application Name}_
+# _Beep Boop Counter_
 
 #### By _**Thomas Bakken**_
 
-#### _{Brief description of application}_
+#### _A simple counting app with substitions for digits 1, 2, and 3._
 
 ## Technologies Used
 
-* _List all_
-* _the major technologies_
-* _you used in your project_
-* _here_
+* _Javascript_
+* _HTML_
+* _CSS_
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_The user inputs a positive integer and the application displays a count from 0 to said integer, with the following substitutions. Integers with the digit 3 are replaced with "Won't you be my neighbor?". Integers with the digit 2 are replaced with "Boop!". Integers with the digit 1 are replaced with "Beep!"._
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* _Run a local or remote hosted server for this web page_
+* _Open the corresponding link in a web browser of your choosing_
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
+_This is a dynamic web page relying on javascript, html, and css._
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _Mobile Viewing_
 
 ## License
 
