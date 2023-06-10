@@ -47,18 +47,18 @@ function handleGenerateBeepBoop(countToElement, resultElement) {
 }
 
 //Guarentees Integer input [1 - 999]
-function handleCharInput(event) {
+function handleCharInput() {
     this.value = /^$|^[1-9]\d{0,2}$/.test(this.value) ? this.value : previousCharInput;
     previousCharInput = this.value;
 }
 
-function InitializeUILogic() {
+function initializeUILogic() {
     const countToElement = document.getElementById("count");
     const generateElement = document.getElementById("generate");
     const resultElement = document.getElementById("result");
     countToElement.addEventListener("input", handleCharInput);
-    generateElement.addEventListener("click", (event) =>
+    generateElement.addEventListener("click", () =>
         handleGenerateBeepBoop(countToElement, resultElement));
 }
 
-window.addEventListener("load", InitializeUILogic);
+window.addEventListener("load", initializeUILogic);
