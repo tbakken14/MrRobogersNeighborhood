@@ -5,7 +5,6 @@ function translateBeepBoop(number) {
     while (number > 0) {
         let digit = number % 10;
         number = Math.floor(number / 10);
-        console.log("hi")
         if (digit === 3) {
             output = 3;
             break;
@@ -21,32 +20,34 @@ function translateBeepBoop(number) {
 }
 
 function getBeepBoopCountingArray(countToInteger) {
-    console.log(countToInteger.value);
     let beepBoopArr = [];
     for (let i = 0; i <= countToInteger; i++) {
         beepBoopArr.push(translateBeepBoop(i));
     }
-    console.log(beepBoopArr.length);
     return beepBoopArr;
 }
 
 //UI Logic
-function handleGenerateBeepBoop(countToElement) {
+let previousCharInput = "";
+
+function handleGenerateBeepBoop(countToElement, resultElement) {
     const beepBoopArr = getBeepBoopCountingArray(parseInt(countToElement.value));
 }
 
-//Guarentees Integer input less than 1000
+//Guarentees Integer input [1 - 999]
 function handleCharInput(event) {
-    prevInput = this.value.slice(0, -1);
-    this.value = /[1-9][0-9]*$/.test(this.value) && this.value.length <= 3 ?
-        + this.value : prevInput;
+    this.value = /^$|[1-9][0-9]*$/.test(this.value) && this.value.length <= 3 ?
+        this.value : previousCharInput;
+    previousCharInput = this.value;
 }
 
 function InitializeUILogic() {
     const countToElement = document.getElementById("count");
+    const generateElement = document.getElementById("generate");
+    const resultElement = document.getElementById("result");
     countToElement.addEventListener("input", handleCharInput);
-    const generateButton = document.getElementById("generate");
-    generateButton.addEventListener("click", (event) => handleGenerateBeepBoop(countToElement));
+    generateElement.addEventListener("click", (event) =>
+        handleGenerateBeepBoop(countToElement, resultElement));
 }
 
 window.addEventListener("load", InitializeUILogic);
