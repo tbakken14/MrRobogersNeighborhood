@@ -1,10 +1,11 @@
 //Business Logic
 function translateBeepBoop(number) {
-    const outputs = { 0: number, 1: "Beep!", 2: "Boop!", 3: "Let me be your neighbor!" };
+    const outputs = { 0: number, 1: "Beep!", 2: "Boop!", 3: "Won't you be my neighbor?" };
     let output = 0;
     while (number > 0) {
         let digit = number % 10;
         number = Math.floor(number / 10);
+        console.log("hi")
         if (digit === 3) {
             output = 3;
             break;
