@@ -30,8 +30,20 @@ function getBeepBoopCountingArray(countToInteger) {
 //UI Logic
 let previousCharInput = "";
 
+function addLiElement(resultElement, value) {
+    const liElement = document.createElement("li");
+    liElement.append(value);
+    resultElement.appendChild(liElement);
+}
+
+function removeChildren(element) {
+    element.innerHTML = "";
+}
+
 function handleGenerateBeepBoop(countToElement, resultElement) {
     const beepBoopArr = getBeepBoopCountingArray(parseInt(countToElement.value));
+    removeChildren(resultElement);
+    beepBoopArr.forEach((value) => addLiElement(resultElement, value));
 }
 
 //Guarentees Integer input [1 - 999]
