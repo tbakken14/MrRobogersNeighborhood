@@ -20,15 +20,19 @@ function translateBeepBoop(number) {
     return outputs[output];
 }
 
-function getBeepBoopCountingArray(countTo) {
-    for (let i = 0; i <= countTo; i++) {
-        console.log(i);
+function getBeepBoopCountingArray(countToInteger) {
+    console.log(countToInteger.value);
+    let beepBoopArr = [];
+    for (let i = 0; i <= countToInteger; i++) {
+        beepBoopArr.push(translateBeepBoop(i));
     }
+    console.log(beepBoopArr.length);
+    return beepBoopArr;
 }
 
 //UI Logic
-function handleGenerateBeepBoop(countToInput) {
-    console.log(countToInput.value);
+function handleGenerateBeepBoop(countToElement) {
+    const beepBoopArr = getBeepBoopCountingArray(parseInt(countToElement.value));
 }
 
 //Guarentees Integer input less than 1000
@@ -39,10 +43,10 @@ function handleCharInput(event) {
 }
 
 function InitializeUILogic() {
-    const countToInput = document.getElementById("count");
-    countToInput.addEventListener("input", handleCharInput);
+    const countToElement = document.getElementById("count");
+    countToElement.addEventListener("input", handleCharInput);
     const generateButton = document.getElementById("generate");
-    generateButton.addEventListener("click", (event) => handleGenerateBeepBoop(countToInput));
+    generateButton.addEventListener("click", (event) => handleGenerateBeepBoop(countToElement));
 }
 
 window.addEventListener("load", InitializeUILogic);
