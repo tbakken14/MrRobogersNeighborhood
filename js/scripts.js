@@ -1,6 +1,22 @@
 //Business Logic
-function translateBeepBoop(currentCount) {
-    return currentCount;
+function translateBeepBoop(number) {
+    const outputs = { 0: number, 1: "Beep!", 2: "Boop!", 3: "Let me be your neighbor!" };
+    let output = 0;
+    while (number > 0) {
+        let digit = number % 10;
+        number = Math.floor(number / 10);
+        if (digit === 3) {
+            output = 3;
+            break;
+        }
+        else if (digit === 2 && output < 2) {
+            output = 2;
+        }
+        else if (digit === 1 && output < 1) {
+            output = 1;
+        }
+    }
+    return outputs[output];
 }
 
 function getBeepBoopCountingArray(countTo) {
