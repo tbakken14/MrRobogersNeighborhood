@@ -36,7 +36,7 @@ function handleGenerateBeepBoop(countToElement, resultElement) {
 
 //Guarentees Integer input [1 - 999]
 function handleCharInput(event) {
-    this.value = /^$|^[1-9][0-9]{0,2}$/.test(this.value) ? this.value : previousCharInput;
+    this.value = /^$|^[1-9]\d{0,2}$/.test(this.value) ? this.value : previousCharInput;
     previousCharInput = this.value;
 }
 
