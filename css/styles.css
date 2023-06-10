@@ -21,3 +21,7 @@ button {
 button:active {
     background-color: rgb(184, 184, 184);
 }
+
+ol {
+    margin: 0 20vw 0 20vw;
+}
